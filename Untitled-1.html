@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Headphones Website</title>
+    <link rel="stylesheet" href="1-styles.css">
+    <style>
+        /* Reset and Variables */
+        /* Apply a CSS reset or Normalize.css */
+        
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;  
+            margin: 0;
+            padding: 0;
+        }   
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px; /* Adjust as needed */
+            text-align: center;
+        }
+        
+        /* Header Styles */
+        .header {
+            background-color: #333;
+            color: #fff;
+        }
+        
+        .navbar {
+            padding: 10px 0;
+        }
+        
+        .navbar__logo img {
+            height: 40px; /* Adjust size as needed */
+        }
+
+        .navbar__menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: right;
+        }
+        
+        .navbar__menu ul li {
+            display: inline-block;
+            margin-left: 20px; /* Adjust spacing */
+        }
+        
+        .navbar__menu ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+        }
+        
+        .navbar__menu ul li a:hover {
+            text-decoration: underline;
+        }
+        
+         /* Hero Section Styles */
+        .hero {
+            padding: 100px 0;
+            background-color: white; /* Slightly transparent background */
+            color: #fff;
+            background-image: url(headphones_hero_1.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .hero__content {
+            text-align: center;
+        }
+        
+        .hero__content h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        
+        .hero__content p {
+            font-size: 1.5em;
+            color: white;
+            margin-bottom: 30px;
+        }
+        
+        .hero__content .btn {
+            display: inline-block;
+            background-color: green;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 1.2em;
+        }
+        
+        .hero__content .btn:hover {
+            background-color: #555;
+        }
+        
+        .hero__image {
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .hero__image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        
+        /* What We Do Section */
+        .what-we-do {
+            padding: 80px 0;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .what-we-do h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        .services {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        .service {
+            text-align: center;
+            width: 30%;
+        }
+
+        .service img {
+            max-height: 180px; /* Sets maximum height of the image */
+            width: auto; /* Ensures the width scales proportionally */
+        }
+
+        .service h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .service p {
+            color: #666;
+        }
+        
+       /* Our Results Section */
+       .our-results {
+            padding: 80px 0;
+            background-color: #f2f2f2;
+            text-align: center;
+            background-image: url('headphones_hero_2.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .our-results h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        .results {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        .result {
+            text-align: center;
+            width: 30%;
+            position: relative; /* For positioning the number inside the pentagon */
+        }
+
+        .result .pentagon {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(147, 33, 33);
+            clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5em;
+            position: relative;
+        }
+
+        .result .pentagon::after {
+            content: attr(data-number);
+            position: absolute;
+        }
+
+        .result h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        .result p {
+            color: #666;
+        }
+        
+        /* Form Styles */
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        input[type="checkbox"] {
+            width: auto;
+            margin-bottom: 15px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: rgb(88, 88, 89);
+            border: none;
+            padding: 12px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar__logo">
+                    <img src="logo_headphones.png" alt="Logo">
+                </div> 
+                <div class="navbar__menu">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <section class="hero">
+            <div class="container">
+                <div class="hero__content">
+                    <h1>Welcome to Headphones</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                    <a href="#" class="btn">Shop Now</a>
+                </div>
+            </div>
+        </section>
+    </header>
+    
+    <section class="what-we-do">
+        <div class="container">
+            <h2>What We Do...</h2>
+            <div class="services">
+                <div class="service">
+                    <i class="fas fa-headphones"></i>
+                    <h3>Headphone Sales</h3>
+                    <img src="ic_01.png" alt="Headphone Sales">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-music"></i>
+                    <h3>Music Streaming</h3>
+                    <img src="ic_03.png" alt="Music Streaming">
+                    <p>Nulla facilisi. Mauris nec orci euismod, malesuada libero nec.</p>
+                </div>
+                <div class="service">
+                    <i class="fas fa-headset"></i>
+                    <h3>Customer Support</h3>
+                    <img src="ic_04.png" alt="Customer Support">
+                    <p>Sed vel nisi non ligula tincidunt vestibulum.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="our-results">
+        <div class="container">
+            <h2>Our Results</h2>
+            <div class="results">
+                <div class="result">
+                    <div class="pentagon"data-number="+2%" ></div>
+                    <h3>Customer Satisfaction</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+                <div class="result">
+                    <div class="pentagon"data-number="+2%" ></div>
+                    <h3>Product Quality</h3>
+                    <p>Nulla facilisi. Mauris nec orci euismod, malesuada libero nec.</p>
+                </div>
+                <div class="result">
+                    <div class="pentagon" data-number="+2%"></div>
+                    <h3>Service Reliability</h3>
+                    <p>Sed vel nisi non ligula tincidunt vestibulum.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="registration">
+        <form action="#" method="post" id="registrationForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required maxlength="20">
+          
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required minlength="6">
+          
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+          
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" placeholder="Enter your age" min="18" max="100">
+          
+            <label>
+              <input type="checkbox" id="terms" name="terms" required>
+              I agree to the Terms of Service
+            </label>
+          
+            <input type="submit" value="Register">
+        </form>
+    </section>
+
+ <!-- Footer desing -->
+
+    <footer class="footer">
+        <div class="footer-text">
+            <p> Headphones Website </p>
+        </div>
+
+        <div class="footer-iconTop">
+            <a href="#"><i class='bx bxl-facebook'></i></a>
+            <a href="#"><i class='bx bxl-twitter'></i></a>
+            <a href="#"><i class='bx bxl-linkedin'></i></a>
+        </div>
+    </footer>
+</body>
+</html>
